@@ -1,4 +1,5 @@
-FROM openjdk:8-jdk
+FROM amazoncorretto:17
 VOLUME /tmp
-ADD target/finance-manager-0.0.1-SNAPSHOT app.jar
+EXPOSE 8080
+ADD target/finance-manager-0.0.1-SNAPSHOT.jar app.jar
 ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
